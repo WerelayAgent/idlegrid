@@ -1,7 +1,7 @@
 {
   "name": "idlegrid",
   "version": "1.0.0",
-  "description": "IdleGrid ($GRID) — Your idle GPU, earning. DePIN GPU compute network.",
+  "description": "IdleGrid ($IDLEGRID) — Your idle GPU, earning. DePIN GPU compute network.",
   "main": "index.html",
   "scripts": {
     "start": "npx serve ."
