@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d0b"/>
+      <stop offset="50%" stop-color="#101712"/>
+      <stop offset="100%" stop-color="#070908"/>
+    </linearGradient>
+    <linearGradient id="gridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c8f25a"/>
+      <stop offset="50%" stop-color="#70e28f"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c8f25a" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.85"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background tile -->
+  <rect x="16" y="16" width="480" height="480" rx="115" fill="url(#bgGrad)"/>
+  <rect x="16" y="16" width="480" height="480" rx="115" fill="none" stroke="#c8f25a" stroke-width="2" stroke-opacity="0.2"/>
+  <rect x="18" y="18" width="476" height="476" rx="113" fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.1"/>
+
+  <!-- Subtle background grid matrix -->
+  <path d="M140 140 H372 M140 256 H372 M140 372 H372" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.5"/>
+  <path d="M140 140 V372 M256 140 V372 M372 140 V372" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1.5"/>
+
+  <!-- Connected "G" / Grid structure -->
+  <g filter="url(#glow)">
+    <!-- Outer perimeter traces forming stylized G & grid -->
+    <!-- Top line: (372, 140) -> (140, 140) -->
+    <line x1="372" y1="140" x2="140" y2="140" stroke="#c8f25a" stroke-width="22" stroke-linecap="round"/>
+    
+    <!-- Left vertical: (140, 140) -> (140, 372) -->
+    <line x1="140" y1="140" x2="140" y2="372" stroke="url(#lineGrad)" stroke-width="22" stroke-linecap="round"/>
+    
+    <!-- Bottom line: (140, 372) -> (372, 372) -->
+    <line x1="140" y1="372" x2="372" y2="372" stroke="#38bdf8" stroke-width="22" stroke-linecap="round"/>
+    
+    <!-- Right lower vertical: (372, 372) -> (372, 256) -->
+    <line x1="372" y1="372" x2="372" y2="256" stroke="#38bdf8" stroke-width="22" stroke-linecap="round"/>
+    
+    <!-- Inward spur: (372, 256) -> (256, 256) -->
+    <line x1="372" y1="256" x2="256" y2="256" stroke="url(#lineGrad)" stroke-width="22" stroke-linecap="round"/>
+
+    <!-- Central grid bridge: (256, 140) -> (256, 256) -->
+    <line x1="256" y1="140" x2="256" y2="256" stroke="#c8f25a" stroke-width="14" stroke-opacity="0.4" stroke-linecap="round"/>
+
+    <!-- Glowing Nodes on grid intersections -->
+    <!-- (140, 140) Top-Left -->
+    <circle cx="140" cy="140" r="26" fill="#101712" stroke="#c8f25a" stroke-width="6"/>
+    <circle cx="140" cy="140" r="12" fill="#c8f25a"/>
+
+    <!-- (256, 140) Top-Mid -->
+    <circle cx="256" cy="140" r="22" fill="#101712" stroke="#c8f25a" stroke-width="5"/>
+    <circle cx="256" cy="140" r="10" fill="#c8f25a"/>
+
+    <!-- (372, 140) Top-Right -->
+    <circle cx="372" cy="140" r="26" fill="#101712" stroke="#c8f25a" stroke-width="6"/>
+    <circle cx="372" cy="140" r="12" fill="#c8f25a"/>
+
+    <!-- (140, 256) Mid-Left -->
+    <circle cx="140" cy="256" r="22" fill="#101712" stroke="url(#gridGrad)" stroke-width="5"/>
+    <circle cx="140" cy="256" r="10" fill="#70e28f"/>
+
+    <!-- (256, 256) Center Hub -->
+    <circle cx="256" cy="256" r="26" fill="#101712" stroke="url(#gridGrad)" stroke-width="6"/>
+    <circle cx="256" cy="256" r="12" fill="#70e28f"/>
+
+    <!-- (372, 256) Mid-Right -->
+    <circle cx="372" cy="256" r="26" fill="#101712" stroke="#38bdf8" stroke-width="6"/>
+    <circle cx="372" cy="256" r="12" fill="#38bdf8"/>
+
+    <!-- (140, 372) Bottom-Left -->
+    <circle cx="140" cy="372" r="26" fill="#101712" stroke="#38bdf8" stroke-width="6"/>
+    <circle cx="140" cy="372" r="12" fill="#38bdf8"/>
+
+    <!-- (256, 372) Bottom-Mid -->
+    <circle cx="256" cy="372" r="22" fill="#101712" stroke="#38bdf8" stroke-width="5"/>
+    <circle cx="256" cy="372" r="10" fill="#38bdf8"/>
+
+    <!-- (372, 372) Bottom-Right -->
+    <circle cx="372" cy="372" r="26" fill="#101712" stroke="#38bdf8" stroke-width="6"/>
+    <circle cx="372" cy="372" r="12" fill="#38bdf8"/>
+  </g>
+</svg>
